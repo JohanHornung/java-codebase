@@ -1,19 +1,29 @@
+import java.util.Arrays;
 import java.util.Scanner;
-// Interface die eine Reihe von Test von angegebener method durchführt
-interface Test {
-    String exec(String[] input);
-}
+
 public class Aufgaben {
     public static void main(String[] args) {
         // Modul 2 - Aufgaben
         // squared();
+
+        // Modul 3 - Aufgabe - Werte über dem Durchschnitt
+        int arr[] = {1, 7, 14, 21, 28, 35, 42, 49, 56, 63, 70};
+        int OverAvgInts[] = ValsOverAvg(arr);
+        int numbersOverAvg = OverAvgInts.length;
+        // System.err.println(numbersOverAvg + " Zahlen sind über dem Durchschnitt:\n");
+        // System.err.println(Arrays.toString(OverAvgInts));
+
+        // Modul 3 - Aufgaben - Trennzeichen in Strings
+        String originalStrings[] = {"123456789", "1024", "237236109123"};
+        // Neues Array mit dynamischer Länge wird die modifizierten Strings enthalten
+        String modifiedStrings[] = new String[originalStrings.length]; 
         
-        // Modul 3 - Aufgaben
-        // String originalStrings[] = {"123456789", "1024", "237236109123"};
-        // for (String originalString: originalStrings) {
-        //     String modifiedString = aufgabe2(originalString);
-        //     System.out.println(modifiedString);
-        // }
+        for (int i = 0; i < originalStrings.length; i++) {
+            String modifiedString = stringModifier(originalStrings[i]);
+            modifiedStrings[i] = modifiedString;
+        }    
+        // printing modified Strings
+        // System.out.println(Arrays.toString(modifiedStrings));
     };
     
     // Methode für erste Aufgabe
@@ -35,7 +45,7 @@ public class Aufgaben {
         sc.close();
     };
 
-    public static String aufgabe2(String string) {
+    public static String stringModifier(String string) {
         // Vorerst leere Kopie da Strings in Java unveränderbar sind
         String newString = "";
         int n = string.length();
@@ -46,5 +56,29 @@ public class Aufgaben {
             if (i % 3 == 0 && i != 0) newString += "."; // newString = newString + ".";
         }
         return newString;
+    };
+    public static int[] ValsOverAvg(int[] arr) {
+        int n = arr.length;
+        int sum = 0;
+        int count = 0;
+        int[] ValsOverAvg = new int[n];
+        // Input array wird durchlaufen um den Durschnitt zu ermitteln
+        for (int elem : arr) {
+            sum += elem;
+        }
+        float avg = sum / n;
+        System.out.println("Der Durchschnitt beträgt " + avg);
+        // Test ob Element im Array über dem Durchschnitt liegt
+        for (int i = 0; i < n; i++) {
+            // Element wird dem Output Array hinzugefügt
+            if (arr[i] > avg) {
+                ValsOverAvg[i] = arr[i];
+                count++;
+                // System.out.println(arr[i] + " ist über dem Durchschnitt");
+            }
+        }
+        // System.out.println(avg);
+        // Output Array wird auf relevante Länge gekürzt
+        return Arrays.copyOfRange(ValsOverAvg, n - count, n);
     }
 }
