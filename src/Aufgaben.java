@@ -67,7 +67,7 @@ public class Aufgaben {
             sum += elem;
         }
         float avg = sum / n;
-        System.out.println("Der Durchschnitt beträgt " + avg);
+        // System.out.println("Der Durchschnitt beträgt " + avg);
         // Test ob Element im Array über dem Durchschnitt liegt
         for (int i = 0; i < n; i++) {
             // Element wird dem Output Array hinzugefügt
