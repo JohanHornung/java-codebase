@@ -8,10 +8,9 @@ public class Aufgaben {
 
         // Modul 3 - Aufgabe - Werte über dem Durchschnitt
         int arr[] = {1, 7, 14, 21, 28, 35, 42, 49, 56, 63, 70};
-        int OverAvgInts[] = ValsOverAvg(arr);
-        int numbersOverAvg = OverAvgInts.length;
-        // System.err.println(numbersOverAvg + " Zahlen sind über dem Durchschnitt:\n");
-        // System.err.println(Arrays.toString(OverAvgInts));
+        // System.out.println(Arrays.toString(arr));
+        ValsOverAvg(arr);
+        // System.out.println(Arrays.toString(OverAvgInts));
 
         // Modul 3 - Aufgaben - Trennzeichen in Strings
         String originalStrings[] = {"123456789", "1024", "237236109123"};
@@ -26,7 +25,7 @@ public class Aufgaben {
         // System.out.println(Arrays.toString(modifiedStrings));
     };
     
-    // Methode für erste Aufgabe
+    // Methode für Modul 2
     public static void squared() {
         Scanner sc = new Scanner(System.in);
         boolean validInput = false;
@@ -44,7 +43,7 @@ public class Aufgaben {
         } while (!validInput);
         sc.close();
     };
-
+    // Methode für Modul 3
     public static String stringModifier(String string) {
         // Vorerst leere Kopie da Strings in Java unveränderbar sind
         String newString = "";
@@ -57,11 +56,12 @@ public class Aufgaben {
         }
         return newString;
     };
-    public static int[] ValsOverAvg(int[] arr) {
+    // Methode für Modul 3
+    public static void ValsOverAvg(int[] arr) {
         int n = arr.length;
         int sum = 0;
-        int count = 0;
-        int[] ValsOverAvg = new int[n];
+        // int count = 0;
+        // int[] ValsOverAvg = new int[n];
         // Input array wird durchlaufen um den Durschnitt zu ermitteln
         for (int elem : arr) {
             sum += elem;
@@ -72,13 +72,11 @@ public class Aufgaben {
         for (int i = 0; i < n; i++) {
             // Element wird dem Output Array hinzugefügt
             if (arr[i] > avg) {
-                ValsOverAvg[i] = arr[i];
-                count++;
-                // System.out.println(arr[i] + " ist über dem Durchschnitt");
+                System.out.println(arr[i] + " ist über dem Durchschnitt");
+                // ValsOverAvg[i] = arr[i];
+                // count++;
             }
         }
-        // System.out.println(avg);
-        // Output Array wird auf relevante Länge gekürzt
-        return Arrays.copyOfRange(ValsOverAvg, n - count, n);
+        // return Arrays.copyOfRange(ValsOverAvg, n - count, n);
     }
 }
