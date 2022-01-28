@@ -1,3 +1,5 @@
+import java.math.BigInteger;
+
 public class Variables {
     public static void main(String[] args) {
         // double -> float geht weil double > float
@@ -40,6 +42,8 @@ public class Variables {
             default:
                 break;
         }
-        
+        // BigInt class for really big ints
+        BigInteger bi = new BigInteger("10000000000000000000000");
+        System.out.println(bi.add(new BigInteger("45"))); 
     }
 }

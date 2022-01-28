@@ -5,22 +5,21 @@ public class Aufgaben {
     public static void main(String[] args) {
         // Modul 2 - Aufgaben
         squared();
-
         // Modul 3 - Aufgabe - Werte über dem Durchschnitt
-        int arr[] = {1, 7, 14, 21, 28, 35, 42, 49, 56, 63, 70};
+        // int arr[] = {1, 7, 14, 21, 28, 35, 42, 49, 56, 63, 70};
         // System.out.println(Arrays.toString(arr));
         // ValsOverAvg(arr);
         // System.out.println(Arrays.toString(OverAvgInts));
 
         // Modul 3 - Aufgaben - Trennzeichen in Strings
-        String originalStrings[] = {"123456789", "1024", "237236109123"};
-        // Neues Array mit dynamischer Länge wird die modifizierten Strings enthalten
-        String modifiedStrings[] = new String[originalStrings.length]; 
+        // String originalStrings[] = {"123456789", "1024", "237236109123"};
+        // // Neues Array mit dynamischer Länge wird die modifizierten Strings enthalten
+        // String modifiedStrings[] = new String[originalStrings.length]; 
         
-        for (int i = 0; i < originalStrings.length; i++) {
-            String modifiedString = stringModifier(originalStrings[i]);
-            modifiedStrings[i] = modifiedString;
-        }    
+        // for (int i = 0; i < originalStrings.length; i++) {
+        //     String modifiedString = stringModifier(originalStrings[i]);
+        //     modifiedStrings[i] = modifiedString;
+        // }    
         // printing modified Strings
         // System.out.println(Arrays.toString(modifiedStrings));
     };
@@ -31,16 +30,16 @@ public class Aufgaben {
         boolean validInput = false;
         do {
             System.out.println("Please enter a number:\n");
-            String input = sc.nextLine();
+            String input = sc.nextLine(); // System.console().readLine()
             try {
                 float number = Float.parseFloat(input);
                 validInput = true;
                 // int squared = number * number;
                 System.out.println(number + " squared equals to: " + number * number);
-            } catch (NumberFormatException e) {
+            } catch (NumberFormatException e) { 
                 System.out.println("This is not a valid number.\n");
             }
-        } while (!validInput);
+        } while (!validInput); // validInput == False
         sc.close();
     };
     // Methode für Modul 3
