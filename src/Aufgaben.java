@@ -4,12 +4,12 @@ import java.util.Scanner;
 public class Aufgaben {
     public static void main(String[] args) {
         // Modul 2 - Aufgaben
-        // squared();
+        squared();
 
         // Modul 3 - Aufgabe - Werte über dem Durchschnitt
         int arr[] = {1, 7, 14, 21, 28, 35, 42, 49, 56, 63, 70};
         // System.out.println(Arrays.toString(arr));
-        ValsOverAvg(arr);
+        // ValsOverAvg(arr);
         // System.out.println(Arrays.toString(OverAvgInts));
 
         // Modul 3 - Aufgaben - Trennzeichen in Strings
@@ -33,28 +33,15 @@ public class Aufgaben {
             System.out.println("Please enter a number:\n");
             String input = sc.nextLine();
             try {
-                int number = Integer.parseInt(input);
+                float number = Float.parseFloat(input);
                 validInput = true;
-                int squared = number * number;
-                System.out.println(number + " squared equals to: " + squared);
+                // int squared = number * number;
+                System.out.println(number + " squared equals to: " + number * number);
             } catch (NumberFormatException e) {
                 System.out.println("This is not a valid number.\n");
             }
         } while (!validInput);
         sc.close();
-    };
-    // Methode für Modul 3
-    public static String stringModifier(String string) {
-        // Vorerst leere Kopie da Strings in Java unveränderbar sind
-        String newString = "";
-        int n = string.length();
-        for (int i = n - 1; i >= 0; i--) {
-            // Der Kopie wird char pro char (vom Original) erweitert
-            newString += string.charAt(n - i - 1);
-            // Nach jeder dritt-letzen Zahl (außer am Ende des strings) wird ein Punkt hinzugefügt
-            if (i % 3 == 0 && i != 0) newString += "."; // newString = newString + ".";
-        }
-        return newString;
     };
     // Methode für Modul 3
     public static void ValsOverAvg(int[] arr) {
@@ -78,5 +65,18 @@ public class Aufgaben {
             }
         }
         // return Arrays.copyOfRange(ValsOverAvg, n - count, n);
-    }
+    };
+    // Methode für Modul 3
+    public static String stringModifier(String string) {
+        // Vorerst leere Kopie da Strings in Java unveränderbar sind
+        String newString = "";
+        int n = string.length();
+        for (int i = n - 1; i >= 0; i--) {
+            // Der Kopie wird char pro char (vom Original) erweitert
+            newString += string.charAt(n - i - 1);
+            // Nach jeder dritt-letzen Zahl (außer am Ende des strings) wird ein Punkt hinzugefügt
+            if (i % 3 == 0 && i != 0) newString += "."; // newString = newString + ".";
+        }
+        return newString;
+    };
 }
