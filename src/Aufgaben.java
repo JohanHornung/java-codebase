@@ -4,7 +4,8 @@ import java.util.Scanner;
 public class Aufgaben {
     public static void main(String[] args) {
         // Modul 2 - Aufgaben
-        squared();
+        // squared();
+
         // Modul 3 - Aufgabe - Werte über dem Durchschnitt
         // int arr[] = {1, 7, 14, 21, 28, 35, 42, 49, 56, 63, 70};
         // System.out.println(Arrays.toString(arr));
@@ -48,12 +49,12 @@ public class Aufgaben {
         int sum = 0;
         // int count = 0;
         // int[] ValsOverAvg = new int[n];
-        // Input array wird durchlaufen um den Durschnitt zu ermitteln
+        // Durchschnitt wird ausgerechnet
         for (int elem : arr) {
             sum += elem;
         }
         float avg = sum / n;
-        // System.out.println("Der Durchschnitt beträgt " + avg);
+        System.out.println("Der Durchschnitt des Arrays ist: " + avg);
         // Test ob Element im Array über dem Durchschnitt liegt
         for (int i = 0; i < n; i++) {
             // Element wird dem Output Array hinzugefügt
@@ -78,4 +79,5 @@ public class Aufgaben {
         }
         return newString;
     };
+    
 }
