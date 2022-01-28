@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -10,7 +11,6 @@ public class Aufgaben {
         // int arr[] = {1, 7, 14, 21, 28, 35, 42, 49, 56, 63, 70};
         // System.out.println(Arrays.toString(arr));
         // ValsOverAvg(arr);
-        // System.out.println(Arrays.toString(OverAvgInts));
 
         // Modul 3 - Aufgaben - Trennzeichen in Strings
         // String originalStrings[] = {"123456789", "1024", "237236109123"};
@@ -47,8 +47,8 @@ public class Aufgaben {
     public static void ValsOverAvg(int[] arr) {
         int n = arr.length;
         int sum = 0;
-        // int count = 0;
-        // int[] ValsOverAvg = new int[n];
+        // dynamic array for values over average
+        ArrayList<Integer> ValsOverAvg = new ArrayList<>();
         // Durchschnitt wird ausgerechnet
         for (int elem : arr) {
             sum += elem;
@@ -60,14 +60,14 @@ public class Aufgaben {
             // Element wird dem Output Array hinzugefügt
             if (arr[i] > avg) {
                 System.out.println(arr[i] + " ist über dem Durchschnitt");
-                // ValsOverAvg[i] = arr[i];
-                // count++;
+                ValsOverAvg.add(arr[i]);
             }
         }
-        // return Arrays.copyOfRange(ValsOverAvg, n - count, n);
+        System.out.println(ValsOverAvg);
+        // return ValsOverAvg;
     };
     // Methode für Modul 3
-    public static String stringModifier(String string) {
+    public static String stringModifier(String string) {       
         // Vorerst leere Kopie da Strings in Java unveränderbar sind
         String newString = "";
         int n = string.length();
