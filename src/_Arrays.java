@@ -1,4 +1,6 @@
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Random;
 
 public class _Arrays {
     public static void main(String[] args) {
@@ -30,6 +32,26 @@ public class _Arrays {
         // System.out.println(Arrays.toString(intArray1));
         
         // ArrayList (dynamic arrays in Java)
-
-    }
+        // declaration + initialising
+        // ArrayList<Integer> arrayList = 
+        //     new ArrayList<>(Arrays.asList(1, 12, 4, 12, 231));
+        // declaring and adding elements afterwords
+        ArrayList<Double> arrayList = new ArrayList<>();
+        for (int i = 0; i < 10; i++) arrayList.add(Math.random());
+        // System.out.println(arrayList);
+        // adding element
+        arrayList.add(1d);
+        System.out.println(arrayList);
+        // getting size/length
+        int size = arrayList.size();
+        System.out.println(size);
+        // accessing element by index
+        System.out.println(arrayList.get(size - 1)); // last element    
+        // removing element by index
+        arrayList.remove(size - 1);
+        // sorting, default Comparator is null for natural order
+        arrayList.sort(null);
+        System.out.println(arrayList);
+        
+    }   
 }
