@@ -13,16 +13,15 @@ public class Aufgaben {
         // ValsOverAvg(arr);
 
         // Modul 3 - Aufgaben - Trennzeichen in Strings
-        // String originalStrings[] = {"123456789", "1024", "237236109123"};
-        // // Neues Array mit dynamischer Länge wird die modifizierten Strings enthalten
-        // String modifiedStrings[] = new String[originalStrings.length]; 
+        String originalStrings[] = {"12345678", "1024", "237236109123", "1234"};
+        // Neues Array mit dynamischer Länge wird die modifizierten Strings enthalten
+        String modifiedStrings[] = new String[originalStrings.length]; 
         
-        // for (int i = 0; i < originalStrings.length; i++) {
-        //     String modifiedString = stringModifier(originalStrings[i]);
-        //     modifiedStrings[i] = modifiedString;
-        // }    
+        for (int i = 0; i < originalStrings.length; i++) {
+            modifiedStrings[i] = stringModifier(originalStrings[i]);
+        }    
         // printing modified Strings
-        // System.out.println(Arrays.toString(modifiedStrings));
+        System.out.println(Arrays.toString(modifiedStrings));
     };
     
     // Methode für Modul 2
@@ -71,11 +70,14 @@ public class Aufgaben {
         // Vorerst leere Kopie da Strings in Java unveränderbar sind
         String newString = "";
         int n = string.length();
-        for (int i = n - 1; i >= 0; i--) {
-            // Der Kopie wird char pro char (vom Original) erweitert
-            newString += string.charAt(n - i - 1);
+        
+        for (int i = 0; i < n; i++) {
+            // Die Kopie wird char pro char (vom Original) erweitert
+            newString += string.charAt(i);
             // Nach jeder dritt-letzen Zahl (außer am Ende des strings) wird ein Punkt hinzugefügt
-            if (i % 3 == 0 && i != 0) newString += "."; // newString = newString + ".";
+            int reversedIndex = n - i - 1;
+            
+            if (reversedIndex % 3 == 0 && reversedIndex != 0) newString += "."; // newString = newString + ".";
         }
         return newString;
     };
