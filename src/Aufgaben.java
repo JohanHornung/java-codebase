@@ -74,7 +74,7 @@ public class Aufgaben {
         for (int i = 0; i < n; i++) {
             // Die Kopie wird char pro char (vom Original) erweitert
             newString += string.charAt(i);
-            // Nach jeder dritt-letzen Zahl (außer am Ende des strings) wird ein Punkt hinzugefügt
+            // Nach jeder dritt-letzten Zahl (außer am Ende des strings) wird ein Punkt hinzugefügt
             int reversedIndex = n - i - 1;
             
             if (reversedIndex % 3 == 0 && reversedIndex != 0) newString += "."; // newString = newString + ".";

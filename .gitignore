@@ -5,7 +5,7 @@
 *.project
 *.classpath
 # VS Code
-# /.vscode
+.vscode
 
 # Java SE
 /bin
