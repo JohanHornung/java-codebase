@@ -8,9 +8,9 @@ public class Aufgaben {
         // squared();
 
         // Modul 3 - Aufgabe - Werte über dem Durchschnitt
-        // int arr[] = {1, 7, 14, 21, 28, 35, 42, 49, 56, 63, 70};
-        // System.out.println(Arrays.toString(arr));
+        int arr[] = {1, 7, 14, 21, 28, 35, 42, 49, 56, 63, 70};
         // ValsOverAvg(arr);
+        // System.out.println(Arrays.toString(arr));
 
         // Modul 3 - Aufgaben - Trennzeichen in Strings
         String originalStrings[] = {"12345678", "1024", "237236109123", "1234"};
@@ -19,11 +19,11 @@ public class Aufgaben {
         
         for (int i = 0; i < originalStrings.length; i++) {
             modifiedStrings[i] = stringModifier(originalStrings[i]);
-        }    
-        // printing modified Strings
+        }
         System.out.println(Arrays.toString(modifiedStrings));
+        // System.out.println(add(2, 2));    
+        // printing modified Strings
     };
-    
     // Methode für Modul 2
     public static void squared() {
         Scanner sc = new Scanner(System.in);
@@ -47,7 +47,7 @@ public class Aufgaben {
         int n = arr.length;
         int sum = 0;
         // dynamic array for values over average
-        ArrayList<Integer> ValsOverAvg = new ArrayList<>();
+        // ArrayList<Integer> ValsOverAvg = new ArrayList<>();
         // Durchschnitt wird ausgerechnet
         for (int elem : arr) {
             sum += elem;
@@ -59,12 +59,13 @@ public class Aufgaben {
             // Element wird dem Output Array hinzugefügt
             if (arr[i] > avg) {
                 System.out.println(arr[i] + " ist über dem Durchschnitt");
-                ValsOverAvg.add(arr[i]);
+                // ValsOverAvg.add(arr[i]);
             }
         }
-        System.out.println(ValsOverAvg);
+        // System.out.println(ValsOverAvg);
         // return ValsOverAvg;
     };
+    
     // Methode für Modul 3
     public static String stringModifier(String string) {       
         // Vorerst leere Kopie da Strings in Java unveränderbar sind
@@ -75,7 +76,7 @@ public class Aufgaben {
             // Die Kopie wird char pro char (vom Original) erweitert
             newString += string.charAt(i);
             // Nach jeder dritt-letzten Zahl (außer am Ende des strings) wird ein Punkt hinzugefügt
-            int reversedIndex = n - i - 1;
+            int reversedIndex = n - 1 - i;
             
             if (reversedIndex % 3 == 0 && reversedIndex != 0) newString += "."; // newString = newString + ".";
         }
