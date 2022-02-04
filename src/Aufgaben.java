@@ -1,5 +1,5 @@
-import java.util.ArrayList;
-import java.util.Arrays;
+// import java.util.ArrayList;
+// import java.util.Arrays;
 import java.util.Scanner;
 
 public class Aufgaben {
@@ -8,21 +8,21 @@ public class Aufgaben {
         // squared();
 
         // Modul 3 - Aufgabe - Werte über dem Durchschnitt
-        int arr[] = {1, 7, 14, 21, 28, 35, 42, 49, 56, 63, 70};
+        // int arr[] = {1, 7, 14, 21, 28, 35, 42, 49, 56, 63, 70};
         // ValsOverAvg(arr);
         // System.out.println(Arrays.toString(arr));
 
         // Modul 3 - Aufgaben - Trennzeichen in Strings
-        String originalStrings[] = {"12345678", "1024", "237236109123", "1234"};
-        // Neues Array mit dynamischer Länge wird die modifizierten Strings enthalten
-        String modifiedStrings[] = new String[originalStrings.length]; 
+        // String originalStrings[] = {"12345678", "1024", "237236109123", "1234"};
+        // // Neues Array mit dynamischer Länge wird die modifizierten Strings enthalten
+        // String modifiedStrings[] = new String[originalStrings.length]; 
         
-        for (int i = 0; i < originalStrings.length; i++) {
-            modifiedStrings[i] = stringModifier(originalStrings[i]);
-        }
-        System.out.println(Arrays.toString(modifiedStrings));
-        // System.out.println(add(2, 2));    
-        // printing modified Strings
+        // for (int i = 0; i < originalStrings.length; i++) {
+        //     modifiedStrings[i] = stringModifier(originalStrings[i]);
+        // }
+        // System.out.println(Arrays.toString(modifiedStrings));
+        // System.out.println(findE("string"));
+        // System.out.println(findE("Hello world"));
     };
     // Methode für Modul 2
     public static void squared() {
@@ -46,24 +46,19 @@ public class Aufgaben {
     public static void ValsOverAvg(int[] arr) {
         int n = arr.length;
         int sum = 0;
-        // dynamic array for values over average
-        // ArrayList<Integer> ValsOverAvg = new ArrayList<>();
-        // Durchschnitt wird ausgerechnet
-        for (int elem : arr) {
-            sum += elem;
+        // Summe von Elementen
+        for (int e : arr) {
+            sum += e;
         }
+        // Durchschnitt wird ausgerechnet
         float avg = sum / n;
         System.out.println("Der Durchschnitt des Arrays ist: " + avg);
         // Test ob Element im Array über dem Durchschnitt liegt
         for (int i = 0; i < n; i++) {
-            // Element wird dem Output Array hinzugefügt
             if (arr[i] > avg) {
                 System.out.println(arr[i] + " ist über dem Durchschnitt");
-                // ValsOverAvg.add(arr[i]);
             }
         }
-        // System.out.println(ValsOverAvg);
-        // return ValsOverAvg;
     };
     
     // Methode für Modul 3
@@ -75,12 +70,21 @@ public class Aufgaben {
         for (int i = 0; i < n; i++) {
             // Die Kopie wird char pro char (vom Original) erweitert
             newString += string.charAt(i);
-            // Nach jeder dritt-letzten Zahl (außer am Ende des strings) wird ein Punkt hinzugefügt
+            // Punkt-Setzung von rechts nach links
             int reversedIndex = n - 1 - i;
             
-            if (reversedIndex % 3 == 0 && reversedIndex != 0) newString += "."; // newString = newString + ".";
+            // Nach jeder dritt-letzten Zahl (außer am Ende des strings) wird ein Punkt hinzugefügt
+            if (reversedIndex % 3 == 0 && reversedIndex != 0) newString += '.'; // newString = newString + ".";
         }
         return newString;
     };
+    // Pseudo code implementierungsbeispiel
+    public static int findE(String string) {
+        for (int i = 0; i < string.length(); i++) {
+            if (string.charAt(i) == 'e') return i;
+        }
+        return -1;
+    }
+
     
 }

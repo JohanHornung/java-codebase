@@ -1,8 +1,10 @@
+// https://projecteuler.net/
 public class Euler {
     public static void main(String[] args) {
         // System.out.println(sumMultiples(1000));
-        System.out.println(evenFibNumbers(4_000_000));
+        // System.out.println(evenFibNumbers(4_000_000));
         // System.out.println(largestPrimeFactor(600851475143l));
+        System.out.println(smallestMultiple());
     }
 
     // Euler Problem 1
@@ -58,6 +60,17 @@ public class Euler {
                 div = 2;
             }
         }; 
+        return n;
+    };
+    // Euler Problem 5
+    public static int smallestMultiple() {
+        int n = 0;
+        for (int i = 0; i < Integer.MAX_VALUE; i++) {
+            for (int j = 1; j <= 10; j++) {
+                if (!(i % j == 0)) continue;
+            }
+            n = i;
+        }
         return n;
     }
 }
