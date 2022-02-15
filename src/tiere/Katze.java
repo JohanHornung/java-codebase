@@ -6,7 +6,8 @@ public class Katze extends Tier{
     public String fellfarbe;
     public int alter;
     
-    // Verhalten/Methoden
+    // Verhalten/Methoden    
+
     // wenn schlafen() aufgerufen wird, wird das alter um zeit erhöht
     public void schlafen(int zeit) {
         alter += zeit;

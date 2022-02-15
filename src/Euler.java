@@ -62,15 +62,15 @@ public class Euler {
         }; 
         return n;
     };
-    // Euler Problem 5
-    public static int smallestMultiple() {
-        int n = 0;
-        for (int i = 0; i < Integer.MAX_VALUE; i++) {
-            for (int j = 1; j <= 10; j++) {
-                if (!(i % j == 0)) continue;
-            }
-            n = i;
-        }
-        return n;
+    // Euler Problem 5 (still doesnt work)
+    // public static double smallestMultiple() {
+    //     double n = 0;
+    //     for (double i = 2520; i < Double.MAX_VALUE; i++) {
+    //         for (int j = 1; j <= 20; j++) {
+    //             if (!(i % j == 0)) break;
+    //         }
+    //         System.out.println(i);
+    //     }
+    //     return n;
     }
 }
