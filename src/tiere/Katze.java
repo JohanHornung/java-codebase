@@ -6,6 +6,12 @@ public class Katze extends Tier{
     public String fellfarbe;
     public int alter;
     
+    // Konstruktor
+    public Katze(String name, String fellfarbe, int alter) {
+        this.name = name;
+        this.fellfarbe = fellfarbe;
+        this.alter = alter;
+    }
     // Verhalten/Methoden    
 
     // wenn schlafen() aufgerufen wird, wird das alter um zeit erhöht

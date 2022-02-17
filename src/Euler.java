@@ -4,7 +4,7 @@ public class Euler {
         // System.out.println(sumMultiples(1000));
         // System.out.println(evenFibNumbers(4_000_000));
         // System.out.println(largestPrimeFactor(600851475143l));
-        System.out.println(smallestMultiple());
+        // System.out.println(smallestMultiple());
     }
 
     // Euler Problem 1
@@ -72,5 +72,5 @@ public class Euler {
     //         System.out.println(i);
     //     }
     //     return n;
-    }
+    // }
 }

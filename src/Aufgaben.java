@@ -23,6 +23,7 @@ public class Aufgaben {
         // System.out.println(Arrays.toString(modifiedStrings));
         // System.out.println(findE("string"));
         // System.out.println(findE("Hello world"));
+        breakpointTrigger();
     };
     // Methode für Modul 2
     public static void squared() {
@@ -84,6 +85,12 @@ public class Aufgaben {
             if (string.charAt(i) == 'e') return i;
         }
         return -1;
+    }
+    // Breakpoint Übung
+    public static void breakpointTrigger() {
+        for (int i = 1; i <= 1000; i++) {
+            System.out.println(i);
+        }
     }
 
     
