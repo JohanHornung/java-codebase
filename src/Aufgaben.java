@@ -1,5 +1,7 @@
 // import java.util.ArrayList;
-// import java.util.Arrays;
+ import java.util.Arrays;
+
+
 import java.util.Scanner;
 
 public class Aufgaben {
@@ -13,17 +15,17 @@ public class Aufgaben {
         // System.out.println(Arrays.toString(arr));
 
         // Modul 3 - Aufgaben - Trennzeichen in Strings
-        // String originalStrings[] = {"12345678", "1024", "237236109123", "1234"};
-        // // Neues Array mit dynamischer Länge wird die modifizierten Strings enthalten
-        // String modifiedStrings[] = new String[originalStrings.length]; 
+         String originalStrings[] = {"12345678", "1024", "237236109123", "1234"};
+         // Neues Array mit dynamischer Länge wird die modifizierten Strings enthalten
+         String modifiedStrings[] = new String[originalStrings.length];
         
-        // for (int i = 0; i < originalStrings.length; i++) {
-        //     modifiedStrings[i] = stringModifier(originalStrings[i]);
-        // }
-        // System.out.println(Arrays.toString(modifiedStrings));
+         for (int i = 0; i < originalStrings.length; i++) {
+             modifiedStrings[i] = stringModifier(originalStrings[i]);
+         }
+         System.out.println(Arrays.toString(modifiedStrings));
         // System.out.println(findE("string"));
         // System.out.println(findE("Hello world"));
-        breakpointTrigger();
+//        breakpointTrigger();
     };
     // Methode für Modul 2
     public static void squared() {
@@ -65,19 +67,19 @@ public class Aufgaben {
     // Methode für Modul 3
     public static String stringModifier(String string) {       
         // Vorerst leere Kopie da Strings in Java unveränderbar sind
-        String newString = "";
+        StringBuilder newString = new StringBuilder();
         int n = string.length();
         
         for (int i = 0; i < n; i++) {
             // Die Kopie wird char pro char (vom Original) erweitert
-            newString += string.charAt(i);
+            newString.append(string.charAt(i));
             // Punkt-Setzung von rechts nach links
             int reversedIndex = n - 1 - i;
             
             // Nach jeder dritt-letzten Zahl (außer am Ende des strings) wird ein Punkt hinzugefügt
-            if (reversedIndex % 3 == 0 && reversedIndex != 0) newString += '.'; // newString = newString + ".";
+            if (reversedIndex % 3 == 0 && reversedIndex != 0) newString.append('.'); // newString = newString + ".";
         }
-        return newString;
+        return newString.toString();
     };
     // Pseudo code implementierungsbeispiel
     public static int findE(String string) {
@@ -86,7 +88,7 @@ public class Aufgaben {
         }
         return -1;
     }
-    // Breakpoint Übung
+    // Conditional-Breakpoint Übung
     public static void breakpointTrigger() {
         for (int i = 1; i <= 1000; i++) {
             System.out.println(i);
