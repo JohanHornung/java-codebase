@@ -1,6 +1,10 @@
 // import java.util.ArrayList;
- import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.ListIterator;
 
+import tiere.*;
 
 import java.util.Scanner;
 
@@ -15,17 +19,18 @@ public class Aufgaben {
         // System.out.println(Arrays.toString(arr));
 
         // Modul 3 - Aufgaben - Trennzeichen in Strings
-         String originalStrings[] = {"12345678", "1024", "237236109123", "1234"};
-         // Neues Array mit dynamischer Länge wird die modifizierten Strings enthalten
-         String modifiedStrings[] = new String[originalStrings.length];
-        
-         for (int i = 0; i < originalStrings.length; i++) {
-             modifiedStrings[i] = stringModifier(originalStrings[i]);
-         }
-         System.out.println(Arrays.toString(modifiedStrings));
+//         String originalStrings[] = {"12345678", "1024", "237236109123", "1234"};
+//         // Neues Array mit dynamischer Länge wird die modifizierten Strings enthalten
+//         String modifiedStrings[] = new String[originalStrings.length];
+//
+//         for (int i = 0; i < originalStrings.length; i++) {
+//             modifiedStrings[i] = stringModifier(originalStrings[i]);
+//         }
+//         System.out.println(Arrays.toString(modifiedStrings));
         // System.out.println(findE("string"));
         // System.out.println(findE("Hello world"));
 //        breakpointTrigger();
+        fillArrayList();
     };
     // Methode für Modul 2
     public static void squared() {
@@ -94,6 +99,19 @@ public class Aufgaben {
             System.out.println(i);
         }
     }
+    public static void fillArrayList() {
+        ArrayList<Hund> al = new ArrayList<>();
+        al.add(new Hund("a"));
+        al.add(new Hund("b"));
+        al.add(new Hund("c"));
 
+        ListIterator it = al.listIterator();
+
+        while (it.hasNext()) {
+            Hund hund = (Hund) it.next();
+            System.out.println(hund.getName());
+        }
+
+    }
     
 }

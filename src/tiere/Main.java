@@ -10,7 +10,7 @@ public class Main {
         katze1.schlafen(5);
 //        System.out.println(katze1.alter); // 9
 
-        Hund hund = new Hund();
+        Hund hund = new Hund("Klaus");
         // Name wird über Setter-Methode gesetzt obwohl Hund.name private ist
         hund.setName("Klaus");
         System.out.println(hund.getName());
